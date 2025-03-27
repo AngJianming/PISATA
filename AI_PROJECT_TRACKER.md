@@ -1,9 +1,9 @@
-# 🌙 Moon Dev AI Agents for Trading - Project Tracker 🤖
+# 🌙 Project Tracker 🤖
 
 > 🤖 **AI TRANSCRIPT NOTE**: This document serves as a living transcript for AI agents. Each update helps guide the AI's understanding of project progress and goals.
 
 ## 🎯 Project Overview
-This is an experimental research project exploring AI agents for trading, developed by Moon Dev. The project aims to complement human trading operations by addressing common challenges like emotional trading, inconsistent execution, and risk management through specialized AI agents.
+This is an experimental research project exploring AI agents for trading, developed by AngJianming. The project aims to complement human trading operations by addressing common challenges like emotional trading, inconsistent execution, and risk management through specialized AI agents.
 
 ## 🔍 Current Project State
 **Status**: Active Development Phase 🚀
@@ -80,11 +80,3 @@ This is an experimental research project exploring AI agents for trading, develo
 - Jupiter API for trading
 - Emoji-rich debugging 🌙
 
-## 🌟 Easter Eggs
-Throughout the codebase, you'll find Moon Dev's signature touches:
-- 🌙 Moon-themed debug messages
-- Encouraging comments from Moon Dev
-- Space-themed variable names
-- Hidden thank you messages to the community
-
-*Last updated by Moon Dev AI Assistant* 🤖✨ 

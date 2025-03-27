@@ -11,7 +11,7 @@ git checkout -b develop is like saying "make me a copy of whatever branch I'm on
 The -b flag means "create new branch"
 
 # Someone finding your repo could do:
-git clone https://github.com/moondevonyt/moon-dev-ai-agents-for-trading.git
+git clone https://github.com/AngJianming/PISATA.git
 git checkout -b their-feature-name
 
 # You working on your repo:

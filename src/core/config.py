@@ -1,7 +1,7 @@
 """
-🌙 Moon Dev's Trading Configuration
+🌙 PISATA Trading Configuration
 All the magic numbers and settings live here! 
-Remember: Moon Dev says always be careful with your config! 🚀
+Remember: PISATA says always be careful with your config! 🚀
 """
 
 # Token List for Trading 📋
@@ -16,8 +16,8 @@ MONITORED_TOKENS = [
     # 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm',    # 🐕 WIF
 ]
 
-# Moon Dev's Token Trading List 🚀
-# Each token is carefully selected by Moon Dev for maximum moon potential! 🌙
+# PISATA Token Trading List 🚀
+# Each token is carefully selected by PISATA for maximum moon potential! 🌙
 tokens_to_trade = MONITORED_TOKENS  # Using the same list for trading
 
 # Token and wallet settings

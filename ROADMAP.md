@@ -1,4 +1,4 @@
-# 🌙 Moon Dev AI Trading System Roadmap
+# PISATA AI Trading System Roadmap
 
 ## Phase 1: Foundation ✅
 - [x] Project structure setup
@@ -53,4 +53,3 @@
 - Automated strategy adjustment
 - Community integration
 
-*This roadmap is maintained by Moon Dev and serves as a guide for AI agents in understanding project progression* 🤖✨

@@ -1,8 +1,8 @@
 # Useful Prompts
 
-## code evaluation agent
+## Code Evaluation Agent
 
-evaluator_prompt = """
+evaluator_prompt = """<br>
 Evaluate this following code implementation for:
 1. code correctness
 2. time complexity
@@ -16,12 +16,13 @@ Output your evaluation concisely in the following format.
 <feedback>
 What needs improvement and why.
 </feedback>
+<br>
 """
 
-## code generator
+## Code Generator
 
-generator_prompt = """
-Your goal is to complete the task based on <user input>. If there are feedback 
+generator_prompt = """<br>
+Your goal is to complete the task based on `<user input>`. If there are feedback 
 from your previous generations, you should reflect on them to improve your solution
 
 Output your answer concisely in the following format: 
@@ -33,21 +34,24 @@ Output your answer concisely in the following format:
 <response>
 [Your code implementation here]
 </response>
+<br>
 """
 
-task = """
+<br>
+
+task = """<br>
 <user input>
 Implement a Stack with:
 1. push(x)
 2. pop()
 3. getMin()
 All operations should be O(1).
-</user input>
+</user input><br>
 """
 
-## orchastrator
+## Orchastrator Prompt
 
-ORCHESTRATOR_PROMPT = """
+ORCHESTRATOR_PROMPT = """<br>
 Analyze this task and break it down into 2-3 distinct approaches:
 
 Task: {task}
@@ -69,9 +73,13 @@ Focus on how each approach serves different aspects of the task.
     <description>Write an engaging, friendly version that connects with readers</description>
     </task>
 </tasks>
+<br>
 """
 
-WORKER_PROMPT = """
+<br>
+<br>
+
+WORKER_PROMPT = """<br>
 Generate content based on:
 Task: {original_task}
 Style: {task_type}
@@ -82,8 +90,9 @@ Return your response in this format:
 <response>
 Your content here, maintaining the specified style and fully addressing requirements.
 </response>
+<br>
 """
 
-
+## Other Prompts
 prompts from the following posts
 https://github.com/anthropics/anthropic-cookbook/tree/main 
