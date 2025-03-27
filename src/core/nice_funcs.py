@@ -1,6 +1,6 @@
 """
-🌙 Moon Dev's Nice Functions - A collection of utility functions for trading
-Built with love by Moon Dev 🚀
+🌙 PISATA's Nice Functions - A collection of utility functions for trading
+Built with love by AngJianming 🚀
 """
 
 from src.core.config import *
@@ -39,7 +39,7 @@ os.makedirs('temp_data', exist_ok=True)
 
 def cleanup_temp_data():
     if os.path.exists('temp_data'):
-        print("🧹 Moon Dev cleaning up temporary data...")
+        print("🧹 PISATA cleaning up temporary data...")
         shutil.rmtree('temp_data')
 
 atexit.register(cleanup_temp_data)
@@ -338,7 +338,7 @@ def get_data(address, days_back_4_data, timeframe):
     # Check temp data first
     temp_file = f"temp_data/{address}_latest.csv"
     if os.path.exists(temp_file):
-        print(f"📂 Moon Dev found cached data for {address[:4]}")
+        print(f"📂 PISATA found cached data for {address[:4]}")
         return pd.read_csv(temp_file)
 
     url = f"https://public-api.birdeye.so/defi/ohlcv?address={address}&type={timeframe}&time_from={time_from}&time_to={time_to}"
@@ -368,16 +368,16 @@ def get_data(address, days_back_4_data, timeframe):
 
         # Pad if needed
         if len(df) < 40:
-            print(f"🌙 MoonDev Alert: Padding data to ensure minimum 40 rows for analysis! 🚀")
+            print(f"🌙 PISATA Alert: Padding data to ensure minimum 40 rows for analysis! 🚀")
             rows_to_add = 40 - len(df)
             first_row_replicated = pd.concat([df.iloc[0:1]] * rows_to_add, ignore_index=True)
             df = pd.concat([first_row_replicated, df], ignore_index=True)
 
-        print(f"📊 MoonDev's Data Analysis Ready! Processing {len(df)} candles... 🎯")
+        print(f"📊 PISATA's Data Analysis Ready! Processing {len(df)} candles... 🎯")
 
         # Always save to temp for current run
         df.to_csv(temp_file)
-        print(f"🔄 Moon Dev cached data for {address[:4]}")
+        print(f"🔄 PISATA cached data for {address[:4]}")
 
         # Calculate indicators
         df['MA20'] = ta.sma(df['Close'], length=20)
@@ -390,7 +390,7 @@ def get_data(address, days_back_4_data, timeframe):
 
         return df
     else:
-        print(f"❌ MoonDev Error: Failed to fetch data for address {address}. Status code: {response.status_code}")
+        print(f"❌ PISATA Error: Failed to fetch data for address {address}. Status code: {response.status_code}")
         if response.status_code == 401:
             print("🔑 Check your BIRDEYE_API_KEY in .env file!")
         return pd.DataFrame()
@@ -653,7 +653,7 @@ def pnl_close(token_mint_address):
 
 def chunk_kill(token_mint_address, max_usd_order_size, slippage):
     """Kill a position in chunks"""
-    cprint(f"\n🔪 Moon Dev's AI Agent initiating position exit...", "white", "on_cyan")
+    cprint(f"\n🔪 PISATA's AI Agent initiating position exit...", "white", "on_cyan")
     
     try:
         # Get current position using address from config
@@ -895,7 +895,7 @@ def elegant_entry(symbol, buy_under):
             for i in range(orders_per_open):
                 market_buy(symbol, chunk_size, slippage)
                 # cprint green background black text
-                cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg moon dev', 'white', 'on_blue')
+                cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg PISATA', 'white', 'on_blue')
                 time.sleep(1)
 
             time.sleep(tx_sleep)
@@ -917,7 +917,7 @@ def elegant_entry(symbol, buy_under):
                 for i in range(orders_per_open):
                     market_buy(symbol, chunk_size, slippage)
                     # cprint green background black text
-                    cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg moon dev', 'white', 'on_blue')
+                    cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg PISATA', 'white', 'on_blue')
                     time.sleep(1)
 
                 time.sleep(tx_sleep)
@@ -976,7 +976,7 @@ def breakout_entry(symbol, BREAKOUT_PRICE):
         # for i in range(orders_per_open):
         #     market_buy(symbol, chunk_size, slippage)
         #     # cprint green background black text
-        #     cprint(f'chunk buy submitted of {symbol[-4:]} sz: {chunk_size} you my dawg moon dev', 'white', 'on_blue')
+        #     cprint(f'chunk buy submitted of {symbol[-4:]} sz: {chunk_size} you my dawg PISATA', 'white', 'on_blue')
         #     time.sleep(1)
 
         # time.sleep(tx_sleep)
@@ -995,7 +995,7 @@ def breakout_entry(symbol, BREAKOUT_PRICE):
             for i in range(orders_per_open):
                 market_buy(symbol, chunk_size, slippage)
                 # cprint green background black text
-                cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg moon dev', 'white', 'on_blue')
+                cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg PISATA', 'white', 'on_blue')
                 time.sleep(1)
 
             time.sleep(tx_sleep)
@@ -1017,7 +1017,7 @@ def breakout_entry(symbol, BREAKOUT_PRICE):
                 for i in range(orders_per_open):
                     market_buy(symbol, chunk_size, slippage)
                     # cprint green background black text
-                    cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg moon dev', 'white', 'on_blue')
+                    cprint(f'chunk buy submitted of {symbol[:4]} sz: {chunk_size} you my dawg PISATA', 'white', 'on_blue')
                     time.sleep(1)
 
                 time.sleep(tx_sleep)
@@ -1048,8 +1048,8 @@ def breakout_entry(symbol, BREAKOUT_PRICE):
 
 
 def ai_entry(symbol, amount):
-    """AI agent entry function for Moon Dev's trading system 🤖"""
-    cprint("🤖 Moon Dev's AI Trading Agent initiating position entry...", "white", "on_blue")
+    """AI agent entry function for PISATA's trading system 🤖"""
+    cprint("🤖 PISATA's AI Trading Agent initiating position entry...", "white", "on_blue")
     
     # amount passed in is the target allocation (up to 30% of usd_size)
     target_size = amount  # This could be up to $3 (30% of $10)
@@ -1152,7 +1152,7 @@ def ai_entry(symbol, amount):
     cprint("✨ AI Agent completed position entry", "white", "on_blue")
 
 def get_token_balance_usd(token_mint_address):
-    """Get the USD value of a token position for Moon Dev's wallet 🌙"""
+    """Get the USD value of a token position for PISATA's wallet 🌙"""
     try:
         # Get the position data using existing function
         df = fetch_wallet_token_single(address, token_mint_address)  # Using address from config

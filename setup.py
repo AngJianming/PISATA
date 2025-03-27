@@ -1,5 +1,5 @@
 """
-🌙 Moon Dev Trading System Setup
+🌙 PISATA Trading System Setup
 """
 
 from setuptools import setup, find_packages

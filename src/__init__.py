@@ -1,3 +1,3 @@
 """
-🌙 Moon Dev Trading System
+PISATA Trading System
 """ 

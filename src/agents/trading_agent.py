@@ -1,14 +1,10 @@
-"""
-🌙 Moon Dev's AI Trading Agent
-Built with love by Moon Dev 🚀
-"""
 
 # ⏰ Run Configuration
 RUN_INTERVAL_MINUTES = 15  # How often the AI agent runs
 
 # 🎯 Trading Strategy Prompt - The Secret Sauce! 
 TRADING_PROMPT = """
-You are Moon Dev's AI Trading Assistant 🌙
+You are a AI Trading Assistant
 
 Analyze the provided market data and make a trading decision based on these criteria:
 1. Price action relative to MA20 and MA40
@@ -24,12 +20,12 @@ Respond in this exact format:
    - Market conditions
    - Confidence level (as a percentage, e.g. 75%)
 
-Remember: Moon Dev always prioritizes risk management! 🛡️
+Remember: Always prioritizes risk management! 🛡️
 """
 
 # 💰 Portfolio Allocation Prompt
 ALLOCATION_PROMPT = """
-You are Moon Dev's Portfolio Allocation Assistant 🌙
+You are a Portfolio Allocation Assistant 
 
 Given the total portfolio size and trading recommendations, allocate capital efficiently.
 Consider:
@@ -71,14 +67,14 @@ load_dotenv()
 
 class TradingAgent:
     def __init__(self):
-        """Initialize the AI Trading Agent with Moon Dev's magic ✨"""
+        """Initialize the AI Trading Agent with PISATA's magic ✨"""
         api_key = os.getenv("ANTHROPIC_KEY")
         if not api_key:
             raise ValueError("🚨 ANTHROPIC_KEY not found in environment variables!")
             
         self.client = anthropic.Anthropic(api_key=api_key)
         self.recommendations_df = pd.DataFrame(columns=['token', 'action', 'confidence', 'reasoning'])
-        print("🤖 Moon Dev's AI Trading Agent initialized!")
+        print("🤖 PISATA's AI Trading Agent initialized!")
         
     def analyze_market_data(self, token, market_data):
         """Analyze market data using Claude"""
@@ -129,7 +125,7 @@ class TradingAgent:
                 }])
             ], ignore_index=True)
             
-            print(f"🎯 Moon Dev's AI Analysis Complete for {token[:4]}!")
+            print(f"🎯 PISATA's AI Analysis Complete for {token[:4]}!")
             return response
             
         except Exception as e:
@@ -237,7 +233,7 @@ class TradingAgent:
     def execute_allocations(self, allocation_dict):
         """Execute the allocations using AI entry for each position"""
         try:
-            print("\n🚀 Moon Dev executing portfolio allocations...")
+            print("\n🚀 PISATA executing portfolio allocations...")
             
             for token, amount in allocation_dict.items():
                 # Skip USDC - that's our cash position
@@ -274,7 +270,7 @@ class TradingAgent:
                 
         except Exception as e:
             print(f"❌ Error executing allocations: {str(e)}")
-            print("🔧 Moon Dev suggests checking the logs and trying again!")
+            print("🔧 PISATA suggests checking the logs and trying again!")
 
     def handle_exits(self):
         """Check and exit positions based on SELL or NOTHING recommendations"""
@@ -300,7 +296,7 @@ class TradingAgent:
 
 def main():
     """Main function to run the trading agent every 15 minutes"""
-    cprint("🌙 Moon Dev AI Trading System Starting Up! 🚀", "white", "on_blue")
+    cprint("🌙 PISATA AI Trading System Starting Up! 🚀", "white", "on_blue")
     
     INTERVAL = RUN_INTERVAL_MINUTES * 60  # Convert minutes to seconds
     
@@ -325,7 +321,7 @@ def main():
                 print("\n" + "="*50 + "\n")
             
             # Show recommendations summary (without reasoning)
-            cprint("\n📊 Moon Dev's Trading Recommendations:", "white", "on_blue")
+            cprint("\n📊 PISATA's Trading Recommendations:", "white", "on_blue")
             summary_df = agent.recommendations_df[['token', 'action', 'confidence']].copy()
             print(summary_df.to_string(index=False))
             
@@ -354,7 +350,7 @@ def main():
             allocation = agent.allocate_portfolio(usd_size)
             
             if allocation:
-                cprint("\n💼 Moon Dev's Portfolio Allocation:", "white", "on_blue")
+                cprint("\n💼 PISATA's Portfolio Allocation:", "white", "on_blue")
                 print(json.dumps(allocation, indent=4))
                 
                 cprint("\n🎯 Executing allocations...", "white", "on_blue")
@@ -380,11 +376,11 @@ def main():
             time.sleep(INTERVAL)
                 
         except KeyboardInterrupt:
-            cprint("\n👋 Moon Dev AI Agent shutting down gracefully...", "white", "on_blue")
+            cprint("\n👋 PISATA AI Agent shutting down gracefully...", "white", "on_blue")
             break
         except Exception as e:
             cprint(f"\n❌ Error: {str(e)}", "white", "on_red")
-            cprint("🔧 Moon Dev suggests checking the logs and trying again!", "white", "on_blue")
+            cprint("🔧 PISATA suggests checking the logs and trying again!", "white", "on_blue")
             # Still sleep and continue on error
             time.sleep(INTERVAL)
 

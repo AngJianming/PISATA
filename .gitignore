@@ -1,5 +1,3 @@
-# 🌙 Moon Dev's .gitignore
-# Keep your secrets safe! 🔒
 
 # API Keys and Sensitive Data
 .env
@@ -51,7 +49,7 @@ Thumbs.db
 *.sqlite
 *.db
 
-# Moon Dev Trading Specific
+# Trading Specific
 dont_overtrade.txt
 ohlcv_data/
 **/ohlcv_data/
