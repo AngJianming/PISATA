@@ -4,6 +4,8 @@
 
 **⚠️ IMPORTANT: This is just an Hackathon project. There are NO guarantees of profitability. Trading involves substantial risk of loss.**
 
+To learn more about this hackathon you can visit [vHack](https://vhackusm.com/)
+
 This project explores the potential of [artificial financial intelligence](https://www.afi.xyz) - a focused implementation of AI for trading and investing research.
 
 ## 🎯 Vision
